@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard HB20 2024</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+const senha = prompt("Senha do dashboard:");
+if(senha!=="24672545"){
+  alert("Acesso negado");
+  throw new Error("Não autorizado");
+}
+</script>
+
+<h1 style="text-align:center">Dashboard – HB20 2024</h1>
+
+<table border="1" style="margin:20px auto;color:white">
+<tr>
+  <th>Número</th>
+  <th>Status</th>
+  <th>Ações</th>
+</tr>
+</table>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

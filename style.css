@@ -1,0 +1,101 @@
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0d0d0d;
+  color:#fff;
+}
+
+.top{
+  text-align:center;
+  padding:20px 10px;
+}
+
+.top h1{font-size:28px;margin:0}
+.top h2{font-size:22px;margin:6px 0 10px;color:#1db954}
+
+.price-box{font-size:14px}
+.promo{color:#1db954}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(70px,1fr));
+  gap:10px;
+  padding:15px;
+}
+
+.number{
+  background:#111;
+  border-radius:8px;
+  padding:18px 0;
+  text-align:center;
+  font-weight:bold;
+  position:relative;
+}
+
+.available{background:#1db954;color:#000}
+.reserved{background:#000}
+.paid{background:#c0392b}
+
+.number::after{
+  content:attr(data-status);
+  position:absolute;
+  bottom:110%;
+  left:50%;
+  transform:translateX(-50%);
+  background:#000;
+  padding:4px 8px;
+  border-radius:4px;
+  font-size:11px;
+  opacity:0;
+}
+
+.number:hover::after{opacity:1}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+}
+
+.modal-box{
+  background:#1a1a1a;
+  width:90%;
+  max-width:320px;
+  margin:20% auto;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.modal-box input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  border:none;
+}
+
+.modal-box button{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.modal-box button:first-of-type{
+  background:#1db954;
+  color:#000;
+}
+
+.cancel{background:#444;color:#fff}
+
+@media(min-width:768px){
+  .top h1{font-size:42px}
+  .top h2{font-size:28px}
+  .price-box{font-size:18px}
+}

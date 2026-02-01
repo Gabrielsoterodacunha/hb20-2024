@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ação entre Amigos – HB20 2024</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <h1>AÇÃO ENTRE AMIGOS</h1>
+  <h2>HB20 2024</h2>
+
+  <div class="price-box">
+    <p>💰 R$ 50 por número</p>
+    <p class="promo">🔥 A partir de 4 números: R$ 40 cada</p>
+  </div>
+</header>
+
+<main>
+  <div class="grid" id="grid"></div>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>Número escolhido</h3>
+    <h1 id="num"></h1>
+
+    <input id="name" placeholder="Nome completo">
+    <input id="email" placeholder="E-mail">
+
+    <button onclick="pay()">Pagar</button>
+    <button class="cancel" onclick="closeModal()">Cancelar</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
