@@ -2,29 +2,47 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Dashboard HB20 2024</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard – HB20 2024</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- LOGIN -->
+<div id="login" style="max-width:300px;margin:80px auto;text-align:center">
+  <h2>Login Dashboard</h2>
+  <input type="password" id="senha" placeholder="Digite a senha"
+    style="width:100%;padding:12px;margin:10px 0;border-radius:6px;border:none">
+  <button onclick="entrar()"
+    style="width:100%;padding:12px;background:#1db954;color:#000;font-weight:bold;border:none;border-radius:6px">
+    Entrar
+  </button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none">
+  <h1 style="text-align:center">Dashboard – HB20 2024</h1>
+
+  <table border="1" style="margin:20px auto;color:white">
+    <tr>
+      <th>Número</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </table>
+</div>
+
 <script>
-const senha = prompt("Senha do dashboard:");
-if(senha!=="24672545"){
-  alert("Acesso negado");
-  throw new Error("Não autorizado");
+function entrar(){
+  const senha = document.getElementById("senha").value;
+  if(senha !== "24672545"){
+    alert("Senha incorreta");
+    return;
+  }
+  document.getElementById("login").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
 }
 </script>
-
-<h1 style="text-align:center">Dashboard – HB20 2024</h1>
-
-<table border="1" style="margin:20px auto;color:white">
-<tr>
-  <th>Número</th>
-  <th>Status</th>
-  <th>Ações</th>
-</tr>
-</table>
 
 <script src="dashboard.js"></script>
 </body>
