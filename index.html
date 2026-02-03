@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ação entre Amigos – HB20 2024</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Rifa Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .numero {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid #333;
+        }
+
+        /* 🔴 ESTILO DO NÚMERO PAGO */
+        .pago {
+            background-color: #c62828;
+            color: #ffffff;
+            font-weight: bold;
+            border: 2px solid #8e0000;
+            pointer-events: none;
+        }
+
+        .status {
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
 
-<header class="top">
-  <h1>AÇÃO ENTRE AMIGOS</h1>
-  <h2>HB20 2024</h2>
+<h1>🎟️ Rifa Online</h1>
 
-  <div class="price-box">
-    <p>💰 R$ 50 por número</p>
-    <p class="promo">🔥 A partir de 4 números: R$ 40 cada</p>
-  </div>
-</header>
-
-<main>
-  <div class="grid" id="grid"></div>
-</main>
-
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <h3>Número escolhido</h3>
-    <h1 id="num"></h1>
-
-    <input id="name" placeholder="Nome completo">
-    <input id="email" placeholder="E-mail">
-
-    <button onclick="pay()">Pagar</button>
-    <button class="cancel" onclick="closeModal()">Cancelar</button>
-  </div>
+<div class="container">
+    <div class="numero">0051-7504-6179-7574</div>
+    <div class="numero">1234-5678-9101-1121</div>
+    <div class="numero">2222-3333-4444-5555</div>
+    <div class="numero">9999-8888-7777-6666</div>
 </div>
 
-<script src="data.js"></script>
-<script src="site.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const numeroPago = "0051-7504-6179-7574";
+
+    document.querySelectorAll(".numero").forEach(numero => {
+        if (numero.textContent.trim() === numeroPago) {
+            numero.classList.add("pago");
+
+            const status = document.createElement("div");
+            status.classList.add("status");
+            status.textContent = "PAGO";
+
+            numero.appendChild(status);
+        }
+    });
+});
+</script>
+
 </body>
 </html>
